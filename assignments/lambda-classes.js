@@ -32,10 +32,10 @@ class Person  {
     
   }
     
-      greet() {
-        return console.log (` Hello my name is ${this.name}, I am from ${this.location}`)
+      speak() {
+        return console.log (`Hello my name is ${this.name}, I am from ${this.location}`)
       }
-    }
+    };
   
 // #### Instructor
 
@@ -51,30 +51,26 @@ class Person  {
 
 
 class Instructor extends Person {
-    constructor (attributes){
+    constructor (attributes) {
         super(attributes);
         this.specialty = attributes.specialty;
         this.favLanguage = attributes.favLanguage;
         this.catchPhrase = attributes.catchPhrase;
    
   }
-       grade(subject) {
-           return console.log('Today we are learning about', subject);
-       }
- 
-       demo(subject) {
-            return console.log(`${Person.name} receives a perfect score on ${subject}`)
+        demo(subject) {
+            return console.log(`Today we are learning about ${subject}`);
 
            }
 
-           grade(student, subject) {
-            {
+           grade(student,subject='PE') {
+            
                 return console.log(`${student.name} receives a perfect score on ${subject}`)
  
-            }}
+               
     
-  };
-
+           }
+        }
 
 
   // #### Student
@@ -241,11 +237,14 @@ class Student extends Person {
   Stacy.PRAssignment('Civics');
   Autumn.sprintChallenge("Dark Arts");
   Omar.standUp('web20');
-  William.debugsCode('Bailey','JavaScript');
+  William.debugsCode(Bailey,'JavaScript');
   Stacy.listSubjects('History');
-  Dan.grade('Stacy');
-  Bailey.greet();
-  Dan.grade('PE')
+  Bailey.speak();
+  Dan.grade(Stacy, 'PE');
+  Josh.demo('Python');
+  Olympia.grade(Autumn,'Transfiguration');
+  
+
 // #### Stretch Problem
 
 // * Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
